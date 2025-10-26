@@ -1,0 +1,198 @@
+:root {
+  --color-dark: #0b0f19;
+  --color-primary: #ffd84f;
+  --color-bg: #101828;
+  --color-light: #f9fafb;
+  --color-text: #e5e7eb;
+  --shadow-soft: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  text-align: center;
+}
+
+/* Header */
+.header {
+  background-color: rgba(11, 15, 25, 0.95);
+  padding: 18px 5%;
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+/* Main Section */
+.donation-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+/* Top Image */
+.top-image {
+  width: 250px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Main Text */
+.main-text {
+  font-size: 1.8rem;
+  margin: 20px 0;
+  color: var(--color-primary);
+}
+
+/* Payment Card */
+.pay-card {
+  background-color: var(--color-dark);
+  color: var(--color-text);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  max-width: 400px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-title {
+  background-color: #111827;
+  color: var(--color-primary);
+  padding: 18px 22px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+.card-content {
+  padding: 25px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+.input-full, .input-half {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1e293b;
+  color: var(--color-light);
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 15px;
+}
+
+/* Button */
+.btn-pay, .btn-primary {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-pay:hover, .btn-primary:hover {
+  background-color: #ffe278;
+}
+
+.spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(0,0,0,0.2);
+  border-top: 3px solid var(--color-dark);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* QR Section */
+.qr-section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.qr-section a img {
+  width: 200px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease;
+}
+
+.qr-section a img:hover {
+  transform: scale(1.05);
+}
+
+.qr-section p {
+  font-size: 1rem;
+  color: var(--color-light);
+}
+
+/* Footer */
+.footer {
+  background-color: #0b0f19;
+  color: #aaa;
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.9rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .input-group {
+    flex-direction: column;
+  }
+
+  .pay-card {
+    max-width: 100%;
+  }
+
+  .top-image {
+    width: 200px;
+  }
+
+  .main-text {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animações */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
